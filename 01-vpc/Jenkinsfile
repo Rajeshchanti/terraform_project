@@ -1,0 +1,49 @@
+pipeline {
+    agent {
+        node {
+            label 'agent'
+        }
+    }
+    options {
+        timeout(time:1, unit: 'HOURS')
+        disableConcurrentBuilds()
+    }
+    stages {
+        stage('Init'){
+            steps {
+                sh """
+                    cd 01-vpc
+                    terraform init -recongifure
+                """
+            }
+        }
+        stage('plan'){
+            steps {
+                sh """
+                    cd 01-vpc
+                    terraform plan
+                """
+            }
+        }
+        stage('Deploy'){
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+            }
+            steps {
+                sh """
+                    cd 01-vpc
+                    terraform apply -auto-approve
+                """
+            }
+        }
+    }
+    post {
+        failure {
+            echo 'Build is Failed'
+        }
+        success {
+            echo 'pipeline is successfully build'
+        }
+    }
+}
