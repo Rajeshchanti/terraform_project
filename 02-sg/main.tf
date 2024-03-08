@@ -1,5 +1,5 @@
 module "vpn" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_vpc.default.id
@@ -7,7 +7,7 @@ module "vpn" {
   sg_description = "SG for VPN"
 }
 module "mongodb" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -17,7 +17,7 @@ module "mongodb" {
 }
 
 module "redis" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -25,7 +25,7 @@ module "redis" {
   sg_description = "SG for redis"
 }
 module "mysql" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -33,7 +33,7 @@ module "mysql" {
   sg_description = "SG for mysql"
 }
 module "rabbitmq" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -41,7 +41,7 @@ module "rabbitmq" {
   sg_description = "SG for rabbitmq"
 }
 module "catalogue" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -50,7 +50,7 @@ module "catalogue" {
 }
 
 module "user" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -58,7 +58,7 @@ module "user" {
   sg_description = "SG for user"
 }
 module "cart" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -66,7 +66,7 @@ module "cart" {
   sg_description = "SG for cart"
 }
 module "shipping" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -74,7 +74,7 @@ module "shipping" {
   sg_description = "SG for shipping"
 }
 module "payment" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -82,7 +82,7 @@ module "payment" {
   sg_description = "SG for payment"
 }
 module "web" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -90,7 +90,7 @@ module "web" {
   sg_description = "SG for web"
 }
 module "app_alb" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
@@ -98,7 +98,7 @@ module "app_alb" {
   sg_description = "SG for App alb"
 }
 module "web_alb" {
-  source = "../../terraform_modules/sg"
+  source = "git::https://github.com/Rajeshchanti/aws_sg_module.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   vpc_id = data.aws_ssm_parameter.vpc_id.value
